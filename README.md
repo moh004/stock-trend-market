@@ -15,41 +15,35 @@ This project is a full-stack web application designed to track stock trends and 
 
 ## Development Plan
 
-### Phase 1: Foundations and Project Setup (Weeks 1-4)
+### Phase 1: Foundations and Project Setup (Weeks 1-2)
 
-#### Week 1: Initial Project Setup
+#### Week 1: Initial Project Setup, Setting Up the Backend ,Setting Up the Frontend with Vue
 - Set up a GitHub repository, project folder structure, and `.gitignore`.
 - Initialize backend (`Express`) and frontend (`Vue`) projects.
 - Research stock market APIs (e.g., Alpha Vantage, Yahoo Finance) and obtain API keys.
 - Configure environment variables for sensitive information.
-
-#### Week 2: Setting Up the Backend
 - Implement a basic Express server.
 - Connect to MongoDB and create a stock data schema.
-- Add routes (e.g., `/api/stocks`) to test MongoDB connectivity.
-
-#### Week 3: Setting Up the Frontend with Vue
+- Add routes (e.g., `/api/stocks`) to test MongoDB connectivity.: 
 - Set up a basic Vue app.
 - Install and set up Axios for HTTP requests.
 - Test backend connection by fetching sample data from the backend.
-
-#### Week 4: Finalizing Basic Connections
 - Test and troubleshoot frontend-backend connection.
 - Add error handling for requests.
 
 ---
 
-### Phase 2: Core Functionality (Weeks 5-12)
+### Phase 2: Core Functionality (Weeks 3-12)
 
-#### Weeks 5-6: CRUD Operations for Stock Data
+#### Weeks 3-5: CRUD Operations for Stock Data
 - Add backend CRUD operations for stock data.
 - Create API documentation.
 - Develop frontend components for CRUD operations.
 
-#### Weeks 7-8: Scheduled Data Fetching
+#### Weeks 6: Scheduled Data Fetching
 - Use `node-cron` to periodically fetch stock data from the API and update MongoDB.
 
-#### Weeks 9-10: Basic Data Visualization on Frontend
+#### Weeks 7-10: Basic Data Visualization on Frontend
 - Display stock data in a table format in Vue with sorting and filtering options.
 
 #### Weeks 11-12: User Favorites and Preferences

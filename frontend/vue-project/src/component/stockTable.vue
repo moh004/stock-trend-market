@@ -4,9 +4,16 @@
 
 const stocks = ref([]);
 
+defineProps({
+     showBnt: {
+       type: Boolean,
+       default: false
+     }
+ })
+
 const fetchStocks = async () => {
   try {
-    const response = await apiClient.get('/stocks');
+    const response = await apiClient.get('/cryptos');
     console.log(stocks.value)
     stocks.value = response.data;
   } catch (error) {
@@ -25,6 +32,7 @@ onMounted(fetchStocks);
       <table class="min-w-full table-auto border-collapse border border-gray-200">
         <thead>
           <tr class="bg-gray-100 text-left">
+            <th class="px-4 py-2 border-b">#</th>
             <th class="px-4 py-2 border-b">Symbol</th>
             <th class="px-4 py-2 border-b">Name</th>
             <th class="px-4 py-2 border-b">Price</th>
@@ -33,16 +41,17 @@ onMounted(fetchStocks);
           </tr>
         </thead>
         <tbody>
-          <tr v-for="stock in stocks" :key="stock._id" class="hover:bg-gray-50">
+          <tr v-for="stock in stocks.slice(0 , !showBnt? 9 : stocks.length)" :key="stock._id" class="hover:bg-gray-50">
+            <td class="px-4 py-2 flex items-center"><img :src="stock.image" alt="logo" class="w-6 h-6 rounded-full mr-2"/></td>
             <td class="px-4 py-2 border-b">{{ stock.symbol }}</td>
             <td class="px-4 py-2 border-b">{{ stock.name }}</td>
-            <td class="px-4 py-2 border-b">{{ stock.price | currency }}</td>
+            <td class="px-4 py-2 border-b">{{ stock.current_price }}</td>
             <td class="px-4 py-2 border-b" :class="{
-              'text-green-600': stock.trend === 'up',
-              'text-red-600': stock.trend === 'down',
-              'text-gray-500': stock.trend === 'neutral'
-            }">{{ stock.trend }}</td>
-            <td class="px-4 py-2 border-b">{{ stock.volume }}</td>
+              'text-green-600': stock.price_change_percentage_24h> 0,
+              'text-red-600': stock.price_change_percentage_24h< 0 ,
+              'text-gray-500': stock.price_change_percentage_24h=== 0
+            }">{{ stock.price_change_percentage_24h}}</td>
+            <td class="px-4 py-2 border-b">{{ stock.total_volume || "N/A" }}</td>
           </tr>
         </tbody>
       </table>

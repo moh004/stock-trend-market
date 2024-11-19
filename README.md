@@ -1,90 +1,56 @@
-
-# Stock Trend Market Project
-
-This project is a full-stack web application designed to track stock trends and visualize stock data over time. It includes a Vue.js frontend and an Express.js backend, with MongoDB as the database for storing stock information. Over the course of 6-8 months, the project builds key skills in full-stack development, API integration, data visualization, and more.
+Thanks for the clarification! Here's the updated to-do list:  
 
 ---
 
-## Project Structure
-- **Backend**: Node.js and Express.js
-- **Frontend**: Vue.js with Axios
-- **Database**: MongoDB (via Mongoose)
-- **Other Tools**: Axios for API requests, `node-cron` for scheduling, and Chart.js or D3.js for data visualization.
+### Week 1  
+~~1. Set up the project repository and initialize the project structure.~~  
+~~2. Build basic frontend pages: Home, Dashboard, and Profile.~~  
+~~3. Integrate a cryptocurrency API (like TwelveData or CoinGecko) for data fetching.~~  
+4. **Set up backend routes for user authentication and data management.**  
+
+### Week 2  
+1. **Build a database structure for user data, portfolio, and transaction history.**  
+~~2. Implement real-time updates for crypto prices on the dashboard.~~  
+3. **Add a portfolio management feature (e.g., buy/sell functionality).**  
+4. **Create a leaderboard or ranking system for users.**  
+5. ~~Test and fix bugs in core functionalities.~~  
 
 ---
 
-## Development Plan
+### Week 3   
+1. **Set up backend routes for user authentication and user management.**  
+2. Implement user authentication (login and signup).  
+3. Build the database structure for storing:  
+   - User details.  
+   - Portfolio and transaction history.  
+   - Leaderboard rankings.  
+4. Add portfolio management:  
+   - Allow users to track and simulate crypto purchases and sales.  
+   - Display portfolio performance over time.  
+5. Build the leaderboard system:  
+   - Rank users based on total portfolio value or gains.  
+   - Add a visual representation of the leaderboard.  
 
-### Phase 1: Foundations and Project Setup (Weeks 1-2)
-
-#### Week 1: Initial Project Setup, Setting Up the Backend ,Setting Up the Frontend with Vue
-- Set up a GitHub repository, project folder structure, and `.gitignore`.
-- Initialize backend (`Express`) and frontend (`Vue`) projects.
-- Research stock market APIs (e.g., Alpha Vantage, Yahoo Finance) and obtain API keys.
-- Configure environment variables for sensitive information.
-- Implement a basic Express server.
-- Connect to MongoDB and create a stock data schema.
-- Add routes (e.g., `/api/stocks`) to test MongoDB connectivity.: 
-- Set up a basic Vue app.
-- Install and set up Axios for HTTP requests.
-- Test backend connection by fetching sample data from the backend.
-- Test and troubleshoot frontend-backend connection.
-- Add error handling for requests.
-
----
-
-### Phase 2: Core Functionality (Weeks 3-12)
-
-#### Weeks 3-5: CRUD Operations for Stock Data
-- Add backend CRUD operations for stock data.
-- Create API documentation.
-- Develop frontend components for CRUD operations.
-
-#### Weeks 6: Scheduled Data Fetching
-- Use `node-cron` to periodically fetch stock data from the API and update MongoDB.
-
-#### Weeks 7-10: Basic Data Visualization on Frontend
-- Display stock data in a table format in Vue with sorting and filtering options.
-
-#### Weeks 11-12: User Favorites and Preferences
-- Allow users to mark stocks as favorites and filter their favorite stocks.
+### Week 4  
+1. Refine game mechanics:  
+   - Simulate daily gains/losses for portfolios.  
+   - Introduce a reward or leveling system.  
+2. Enhance UI/UX:  
+   - Add animations or charts for portfolio and leaderboard performance.  
+   - Improve mobile responsiveness.  
+3. Write detailed API documentation.  
+4. Add basic testing for the authentication, portfolio, and leaderboard functionalities.  
 
 ---
 
-### Phase 3: Advanced Features (Weeks 13-24)
-
-#### Weeks 13-16: Stock Trend Analysis
-- Write backend functions for trend calculations.
-- Create API routes and frontend components for trend data.
-
-#### Weeks 17-20: Interactive Data Visualization
-- Use Chart.js or D3.js for dynamic stock charts.
-- Test and refine chart interactivity.
-
-#### Weeks 21-24: User Authentication and Security
-- Implement user registration and login with JWT.
-- Restrict access to certain routes.
+### Week 5 and Beyond  
+1. Add stock data alongside crypto assets.  
+2. Introduce advanced trading options like stop-loss or limit orders.  
+3. Launch beta testing with user feedback forms.  
+4. Expand game features:  
+   - Social interactions (follow, chat, etc.).  
+   - Monetization options (e.g., premium features).  
 
 ---
 
-### Phase 4: Testing, Debugging, and Deployment (Weeks 25-32)
-
-#### Weeks 25-28: Thorough Testing and Debugging
-- Conduct end-to-end testing and write tests for all functionality.
-
-#### Weeks 29-32: Deployment and Optimization
-- Deploy backend on Heroku, frontend on Netlify/Vercel.
-- Optimize project for production.
-
----
-
-## Usage
-1. Clone the repository and install dependencies for both frontend and backend.
-2. Obtain stock API keys and add them to `.env` file.
-3. Run the backend server and frontend client to start the application.
-
----
-
-## License
-This project is open-source and available for personal and educational use.
-
+Let me know if you'd like help with database schema design, backend routing, or any other feature!

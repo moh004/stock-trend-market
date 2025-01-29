@@ -53,4 +53,3 @@ Thanks for the clarification! Here's the updated to-do list:
 
 ---
 
-Let me know if you'd like help with database schema design, backend routing, or any other feature!

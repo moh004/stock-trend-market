@@ -1,4 +1,4 @@
-Thanks for the clarification! Here's the updated to-do list:  
+
 
 ---
 

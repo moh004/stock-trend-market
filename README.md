@@ -49,6 +49,6 @@
 4. Expand game features:  
    - Social interactions (follow, chat, etc.).  
    - Monetization options (e.g., premium features).  
-
+5.deploy it ,Backend ===> Railway , Frontend ===> ?
 ---
 

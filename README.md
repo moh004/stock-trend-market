@@ -5,8 +5,7 @@
 ### Week 1  
 ~~1. Set up the project repository and initialize the project structure.~~  
 ~~2. Build basic frontend pages: Home, Dashboard, and Profile.~~  
-~~3. Integrate a cryptocurrency API (like TwelveData or CoinGecko) for data fetching.~~  
-4. **Set up backend routes for user authentication and data management.**  
+~~3. Integrate a cryptocurrency API (like TwelveData or CoinGecko) for data fetching.~~ 
 
 ### Week 2  
 1. **Build a database structure for user data, portfolio, and transaction history.**  

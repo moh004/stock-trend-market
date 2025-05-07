@@ -1,4 +1,4 @@
-// backend/index.js
+
 const dotenv = require('dotenv')
 dotenv.config()
 const cors = require("cors")
@@ -19,7 +19,7 @@ app.use(express.json());
 
 app.use(cors({
   origin: 'http://localhost:5173',  
-  methods: 'GET,POST,PUT,DELETE',   // Allowed methods (adjust as needed)
+  methods: 'GET,POST,PUT,DELETE',   
   credentials: true, // Allows cookies/sessions
   allowedHeaders: ['Content-Type', 'Authorization']  
 }));
@@ -36,7 +36,7 @@ app.use(
     cookie: {
       httpOnly: true ,
       secure: false, // change it when HTTPS
-      /* sameSite: "none", */  // when it's in porduction 
+      /* sameSite: "none", */  // when it's in production 
       maxAge : 10 * 24 * 60 * 60 * 1000
     }
   })

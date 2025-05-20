@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^1.7.7",
+    "v-money3": "^3.24.1",
     "vue": "^3.5.12",
     "vue-router": "^4.5.1"
   },

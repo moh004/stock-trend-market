@@ -2,7 +2,9 @@
 </script>
 
 <template>
-    <div class="bg-gray-800 text-white py-6 mt-8">
+    <div class=" bg-orange-400 w-auto h-1 "></div>
+
+    <div class="bg-gray-800 text-white py-6 ">
     <div class="container mx-auto px-6 text-center">
       <p class="text-lg">
         &copy; 2025 Stock Trend Market. All Rights Reserved.😁😆

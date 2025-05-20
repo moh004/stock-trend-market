@@ -1,46 +1,46 @@
-import { createRouter , createWebHistory } from "vue-router";
-import Axios from "@/API/axios"
-import homePage from "@/view/homePage.vue";
-import login from "@/component/login.vue";
-import register from "@/component/register.vue";
-import profile from "@/component/profile.vue";
-import notFound from "@/component/404.vue";
+import { createRouter, createWebHistory } from "vue-router";
+import Axios from "@/API/axios";
+
+import HomePage from "@/view/HomePage.vue";
+import Login from "@/view/loginPage.vue";
+import Register from "@/view/registerPage.vue";
+import Profile from "@/view/profilePage.vue";
+import SellPage from "@/view/sellPage.vue";
+import NotFound from "@/view/404Page.vue";
 
 const router = createRouter({
-    history: createWebHistory("/"),
-    routes: [
-        {path: "/" , component: homePage},
-        {path : "/login" , component: login , meta: {guest: true}},
-        {path: "/register" , component: register , meta: {guest: true}},
-        {path: "/profile" , component: profile , meta: {requiresAuth: true}},
-        {path: "/:pathMatch(.*)*" , component: notFound}
-    ]
+  history: createWebHistory("/"),
+  routes: [
+    { path: "/", component: HomePage },
+    { path: "/login", component: Login, meta: { guest: true } },
+    { path: "/register", component: Register, meta: { guest: true } },
+    { path: "/profile", component: Profile, meta: { requiresAuth: true } },
+    { path: "/sell", name: "SellCoin", component: SellPage, meta: { requiresAuth: true } },
+    { path: "/:pathMatch(.*)*", component: NotFound }
+  ]
 });
 
-
 const isAuth = async () => {
-    try{
-        const response = await Axios.get("/check-auth" );
-        return response.data.isAuthenticated;
-    }
-    catch(e){
-        console.log(e);
-        return false;
-    }
-}
+  try {
+    const response = await Axios.get("/check-auth");
+    return response.data.isAuthenticated;
+  } catch (e) {
+    console.error(e);
+    return false;
+  }
+};
 
-// if user is logged then when user try to go to profile it redirects to register
+// Navigation Guard
+router.beforeEach(async (to, from, next) => {
+  const isAuthenticated = await isAuth();
 
-router.beforeEach( async (to, from, next) => {
-    const isAuthenticated = await isAuth();
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next("/login");
+  } else if (to.meta.guest && isAuthenticated) {
+    next("/profile");
+  } else {
+    next();
+  }
+});
 
-    if (to.meta.requiresAuth && !isAuthenticated) {
-      next("/login"); // Redirect to login if not authenticated
-    } else if (to.meta.guest && isAuthenticated) {
-      next("/profile"); // Redirect logged-in users away from login/register
-    } else {
-      next()
-    }
-  });
-
-export default router; 
+export default router;

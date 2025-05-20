@@ -6,7 +6,9 @@
 
 <template>
       <navbar />
-      <RouterView />
+    <div class="bg-gray-800 text-gray-500 p-12">
+        <RouterView />
+     </div>
       <Footer />
 </template>
 

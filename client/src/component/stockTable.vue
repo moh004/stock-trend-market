@@ -40,19 +40,19 @@ onMounted(fetchStocks);
             <th class="px-4 py-2 border-b">Volume</th>
           </tr>
         </thead>
-        <tbody>
-          <tr v-for="stock in stocks.slice(0 , !showBnt? 10 : stocks.length)" :key="stock._id" class="hover:bg-gray-50">
+        <tbody class=" font-mono">
+          <tr v-for="stock in stocks.slice(0 , !showBnt? 10 : stocks.length)" :key="stock._id" class="hover:bg-yellow-200">
             <td class="px-4 py-2 border-b">{{ stock.market_cap_rank }}</td>
             <td class="px-4 py-2 flex items-center"><img :src="stock.image" alt="logo" class="w-6 h-6 rounded-full mr-2"/></td>
             
             <td class="px-4 py-2 border-b">{{ stock.name }}</td>
-            <td class="px-4 py-2 border-b">{{ stock.current_price }}</td>
+            <td class="px-4 py-2 border-b">${{ stock.current_price }}</td>
             <td class="px-4 py-2 border-b" :class="{
               'text-green-600': stock.price_change_percentage_24h> 0,
               'text-red-600': stock.price_change_percentage_24h< 0 ,
               'text-gray-500': stock.price_change_percentage_24h=== 0
             }">{{`%${ Math.ceil(stock.price_change_percentage_24h)}`}}</td>
-            <td class="px-4 py-2 border-b">{{Number(stock.total_volume).toLocaleString()  || "N/A" }}</td>
+            <td class="px-4 py-2 border-b">${{Number(stock.total_volume).toLocaleString()  || "N/A" }}</td>
           </tr>
         </tbody>
       </table>

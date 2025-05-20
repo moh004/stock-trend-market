@@ -6,7 +6,7 @@ import Axios from '../API/axios';
 
 // Auth state
 const isConnected = ref(false);
-
+const userData = ref();
 // Modal state
 const showLogoutConfirm = ref(false);
 
@@ -15,6 +15,7 @@ const isAuth = async () => {
   try {
     const response = await Axios.get("/check-auth", { withCredentials: true });
     isConnected.value = response.data.isAuthenticated;
+    userData.value = response.data.user
   } catch (error) {
     console.error("Auth check failed:", error);
   }
@@ -57,6 +58,7 @@ onMounted(async () => {
               <RouterLink v-if="!isConnected" to="/login" class="text-white hover:bg-green-500 rounded-md px-3 py-2">LogIn</RouterLink>
               <RouterLink v-if="isConnected" to="/profile" class="text-white hover:bg-gray-900 rounded-md px-3 py-2">Profile</RouterLink>
               <button v-if="isConnected" @click="logout" class="text-white hover:bg-red-700 rounded-md px-3 py-2">Logout</button>
+              <p v-if="isConnected" class="text-gray-300 font-bold bg-blue-500 hover:text-white hover:bg-green-700 rounded-md px-3 py-2">Credit: 🪙{{ userData.balance.toLocaleString() }}</p>
             </div>
           </div>
         </div>

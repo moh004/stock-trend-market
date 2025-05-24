@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Axios from "@/API/axios";
 
-import HomePage from "@/view/HomePage.vue";
+import HomePage from "@/view/homePage.vue";
 import Login from "@/view/loginPage.vue";
 import Register from "@/view/registerPage.vue";
 import Profile from "@/view/profilePage.vue";

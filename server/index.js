@@ -35,8 +35,8 @@ app.use(
     }),
     cookie: {
       httpOnly: true ,
-      secure: false, // change it when HTTPS
-      /* sameSite: "none", */  // when it's in production 
+      secure: true, // change it when HTTPS
+      sameSite: "none",  // when it's in production 
       maxAge : 10 * 24 * 60 * 60 * 1000
     }
   })

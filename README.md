@@ -4,6 +4,8 @@
 
 This is the Fullstack Crypto project using MEVN stack
 
+CHECK OUT my project https://stock-trend-market.vercel.app
+
 ## HOME PAGE
 <img src="./img/homePage.png" />
 

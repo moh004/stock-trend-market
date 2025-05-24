@@ -18,7 +18,7 @@ const{ setCryptoData }= require("./cache/cache.js")
 app.use(express.json());
 
 app.use(cors({
-  origin: 'http://localhost:5173',  
+  origin: 'https://stock-trend-market.vercel.app',  
   methods: 'GET,POST,PUT,DELETE',   
   credentials: true, // Allows cookies/sessions
   allowedHeaders: ['Content-Type', 'Authorization']  

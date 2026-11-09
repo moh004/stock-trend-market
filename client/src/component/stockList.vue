@@ -1,6 +1,8 @@
 <script setup>
    import { ref, onMounted } from 'vue';
    import apiClient from '@/API/axios';
+   
+const emit = defineEmits(['toggleShow']);
 
 let stocks = ref([]);
 
@@ -56,7 +58,8 @@ function sellStock(name) {
       <div>
         <p class="text-lg font-semibold text-gray-900">${{ Number(stock.current_price).toLocaleString()  }}</p>
         <p :class="[ stock.price_change_percentage_24h >= 0 ? 'text-green-700' : 'text-red-500', 'text-sm font-medium mt-1']">
-         <span class="block text-gray-600 text-xs">in 24h</span>{{ `% ${stock.price_change_percentage_24h.toFixed(2)}` }} {{  (stock.price_change_percentage_24h >= 0) ? '▲' : '▼' }} 
+         <span class="block text-gray-600 text-xs">in 24h</span>{{ stock.price_change_percentage_24h != null? `% ${stock.price_change_percentage_24h.toFixed(2)}`: 'N/A'}}
+         {{  (stock.price_change_percentage_24h >= 0) ? '▲' : '▼' }} 
         </p>
       </div>
       <div class="text-right">
@@ -71,5 +74,11 @@ function sellStock(name) {
       <button class="px-6 py-2 bg-red-500 text-white font-medium rounded-full hover:bg-red-400" @click="sellStock(stock.name)">Sell</button>
     </div>
   </div>
-</div>  
+</div> 
+  <button
+  @click="emit('toggleShow')"
+  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 sticky bottom-3 left-1/2 -translate-x-1/2"
+>
+  {{ showBnt ? 'Show Less' : 'Show More' }}
+</button>
 </template>
